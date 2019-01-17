@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.big-box{
+			width:500px;
+			height:300px;
+			margin:100px auto;
+			transform-style: preserve-3d;
+			position: relative;
+		}
+		.pic-box{
+			position: absolute;
+			left:0px;
+			top:0px;
+		}
+		.box1{
+			transform: translateZ(-250px);
+		}
+		.box2{
+			transform: translateZ(250px);
+		}
+		.box3{
+			transform: rotateY(90deg) translateZ(250px);
+		}
+		.box4{
+			transform: rotateY(90deg) translateZ(-250px);
+		}
+
+		@keyframes around{
+			from{
+				transform: rotateY(0deg);
+			}
+			to{
+				transform: rotateY(360deg);
+			}
+		}
+
+		.big-box{
+			animation:around 5s linear infinite
+		}
+	</style>
+</head>
+<body>
+	<div class="big-box">
+		<div class="pic-box box1">
+			<img src="images/1.jpg">
+		</div>
+		<div class="pic-box box2">
+			<img src="images/2.jpg">
+		</div>
+		<div class="pic-box box3">
+			<img src="images/3.jpg">
+		</div>
+		<div class="pic-box box4">
+			<img src="images/4.jpg">
+		</div>
+	</div>
+</body>
+</html>
