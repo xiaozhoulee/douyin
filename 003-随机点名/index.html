@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="style/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+			background-image: url("images/bg-eee.jpg");
+		}
+        .box{
+            text-align: center;
+        }
+        h1{
+            font-size:90px;
+            color:#fff;
+            margin-top:100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>学生姓名</h1>
+        <button id="start" class="btn btn-primary btn-lg">转动</button>
+        <button id="end" class="btn btn-primary btn-lg">停止</button>
+    </div>
+    <script>
+        let list = [  //名单列表
+            "路飞",
+            "索隆",
+            "娜美",
+            "香克斯",
+            "乌索布",
+            "乔巴"
+        ]
+        function changeName(number){
+            let name = document.querySelector("h1");
+            name.innerHTML = list[number];
+        }
+        
+        let t ;
+
+        document.querySelector("#start").onclick = function(){
+            clearInterval(t);  //防止多次点击开始，无法停止的bug
+            t = setInterval(() => {
+            let number = Math.floor(Math.random()*list.length);
+                changeName(number);
+            }, 10);  //每个10毫秒刷新一次名字
+        }
+        document.querySelector("#end").onclick = function(){
+            clearInterval(t);
+        }
+
+        
+    </script>
+</body>
+
+</html>

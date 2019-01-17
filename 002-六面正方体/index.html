@@ -4,51 +4,64 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style type="text/css">
-		.big-box{
-			width:200px;
-			height:200px;
-			margin:100px auto;
+		body {
+			background-image: url("images/bg-eee.jpg");
+		}
+
+		.big-box {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
 			transform-style: preserve-3d;
 			position: relative;
 		}
-		.pic-box{
+
+		.pic-box {
 			position: absolute;
-			left:0px;
-			top:0px;
+			left: 0px;
+			top: 0px;
 		}
-		.box1{
+
+		.box1 {
 			transform: translateZ(-100px);
 		}
-		.box2{
+
+		.box2 {
 			transform: translateZ(100px);
 		}
-		.box3{
+
+		.box3 {
 			transform: rotateY(90deg) translateZ(100px);
 		}
-		.box4{
+
+		.box4 {
 			transform: rotateY(90deg) translateZ(-100px);
 		}
-		.box5{
+
+		.box5 {
 			transform: rotateX(90deg) translateZ(-100px);
 		}
-		.box6{
+
+		.box6 {
 			transform: rotateX(90deg) translateZ(100px);
 		}
 
-		@keyframes around{
-			from{
+		@keyframes around {
+			from {
 				transform: rotateY(0deg) rotateX(0deg);
 			}
-			to{
+
+			to {
 				transform: rotateY(360deg) rotateX(360deg);
 			}
 		}
 
-		.big-box{
-			animation:around 5s linear infinite
+		.big-box {
+			animation: around 5s linear infinite
 		}
 	</style>
 </head>
+
 <body>
 	<div class="big-box">
 		<div class="pic-box box1">
@@ -71,4 +84,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
